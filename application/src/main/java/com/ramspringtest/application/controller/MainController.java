@@ -1,5 +1,6 @@
 package com.ramspringtest.application.controller;
 
+
 import com.ramspringtest.application.models.User;
 import com.ramspringtest.application.services.MainService;
 import org.springframework.http.HttpStatus;
@@ -18,7 +19,7 @@ public class MainController {
 
     @PostMapping(value = "/users")
     @ResponseStatus(HttpStatus.CREATED)
-    public User createUser(@Valid @RequestBody User user) {
+    public User createUser(User user) {
         //add service or 2nd controller
         MainService.createUser(user);
         return user;
